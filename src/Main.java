@@ -20,17 +20,15 @@ public class Main {
     	byte pointer; //Point to the list in which we are currently
     	if(current1.val < current2.val) pointer = 1; //Initial pointer position
     	else pointer = 2;
-    	boolean oneIsDone = false, twoIsDone = false; //Checks when we reach the end of the list
     	
     	while(current1 != null && current2 != null) {
     		
     		ListNode next1 = current1.next;
     		ListNode next2 = current2.next;
     		
-    		if(pointer == 1 && !oneIsDone) {
+    		if(pointer == 1) {
     			
     			if(next1 == null) {
-    				oneIsDone = true;
     				current1.next = current2;
     				break;
     			}
@@ -45,10 +43,9 @@ public class Main {
     				}
     			}
     			
-    		} else if(pointer == 2 && !twoIsDone) {
+    		} else if(pointer == 2) {
     			
     			if(next2 == null) {
-    				twoIsDone = true;
     				current2.next = current1;
     				break;
     			}
